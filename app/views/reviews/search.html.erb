@@ -1,0 +1,12 @@
+<% if @reviews.present? %>
+  <% @reviews.each do |review| %>
+    <p>
+      <%= review %>
+    </p>
+  <% end %>
+<% else %>
+  No feviews found for item with id
+  <b><%= params[:search][:item_id] %></b>
+  and keywords:
+  <b><%= params[:search][:keywords].presence || 'no keywords specified' %></b>
+<% end %>
